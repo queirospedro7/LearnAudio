@@ -65,7 +65,7 @@ Os testes verificam a estrutura do texto, pausas, sincronização, contraste e d
 3. Usa Node.js 22. Não são necessárias variáveis de ambiente adicionais.
 4. Publica primeiro uma Preview e confirma importação, vozes e reprodução no endereço publicado.
 
-A versão alojada aceita documentos até 4 MB para respeitar o limite de pedidos da plataforma. A versão local mantém os 25 MB. Piper e Kokoro só estão disponíveis no computador; a versão online utiliza as vozes Microsoft. A geração de áudio depende desse serviço externo e deve ser confirmada após publicar.
+Os documentos PDF, DOCX, TXT e Markdown são importados no próprio navegador, até 25 MB, tanto localmente como na Vercel. O ficheiro não é enviado para a API de importação; o texto necessário para a leitura é enviado aos serviços de preparação e de voz. A API de importação mantém o limite de 4 MB na Vercel para clientes que a utilizem diretamente. Piper e Kokoro só estão disponíveis no computador; a versão online utiliza as vozes Microsoft. A geração de áudio depende desse serviço externo e deve ser confirmada após publicar.
 
 O build inclui os ficheiros do leitor PDF. Modelos, cache de áudio, documentos temporários e dependências instaladas não devem ser enviados manualmente. Na Vercel, a cache fica na pasta temporária de cada instância. O áudio e os tempos de palavras são devolvidos no mesmo pedido, evitando depender de ficheiros de outra instância.
 

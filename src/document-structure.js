@@ -1,4 +1,4 @@
-import {DOMParser} from '@xmldom/xmldom';
+import {DOMParser} from './xml.js';
 import {normalize} from './text.js';
 export function wordHtmlToText(html){
  const doc=new DOMParser({errorHandler:()=>{}}).parseFromString('<body>'+html+'</body>','text/html');const output=[];

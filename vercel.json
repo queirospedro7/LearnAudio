@@ -6,13 +6,33 @@
   "functions": {
     "api/index.js": {
       "maxDuration": 60,
-      "excludeFiles": "{data,tmp,test}/**"
+      "excludeFiles": "{data,tmp,test}/**",
+      "includeFiles": "node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs"
     }
   },
-  "rewrites": [{"source": "/api/:path*", "destination": "/api/index"}],
-  "headers": [{"source": "/(.*)", "headers": [
-    {"key": "X-Content-Type-Options", "value": "nosniff"},
-    {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"},
-    {"key": "X-Frame-Options", "value": "SAMEORIGIN"}
-  ]}]
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "/api/index"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        }
+      ]
+    }
+  ]
 }

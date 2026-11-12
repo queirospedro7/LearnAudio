@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node src/server.js",
     "test": "node --test",
-    "build": "node scripts/build.mjs"
+    "build": "node scripts/build.mjs",
+    "prestart": "npm run build",
+    "pretest": "npm run build"
   },
   "dependencies": {
     "@xmldom/xmldom": "0.8.15",
