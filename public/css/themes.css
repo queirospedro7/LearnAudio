@@ -1,0 +1,69 @@
+
+:root{background:var(--theme-page);color:var(--theme-text);--paper:var(--theme-paper);--line:var(--theme-line);--muted:var(--theme-muted);--green:var(--theme-accent)}
+body{background:var(--theme-page);color:var(--theme-text)}
+.theme-picker{display:flex;gap:3px;flex-wrap:wrap;padding:3px;border:1px solid var(--theme-line);border-radius:9px;background:var(--theme-soft)}
+.theme-picker button{padding:6px 11px;font-size:11px;min-height:32px;border:1px solid transparent;background:transparent;color:var(--theme-muted);border-radius:6px}
+.theme-picker button[aria-pressed=true]{background:var(--theme-paper);color:var(--theme-text);border-color:var(--theme-line);box-shadow:0 1px 3px #00000010}
+.document,.settings,.document-expanded .document,.select-popup,.reading-panel{background:var(--theme-paper);border-color:var(--theme-line);color:var(--theme-text)}
+.brand,.brand span,h1,h2,textarea,.reading-focus p,.duration-summary strong,.playing strong{color:var(--theme-text)}
+.intro h1 em,.eyebrow,.locale,.tag,.note,.privacy,.voice-info,.doc-meta,.doc-foot,.range-hints,.range-label output,.drop span,.local-install summary,.local-install small,#documentViewStatus,.playing small,.reading-head label,.focus-label>span,.playback-duration>div,.playback-duration strong,.duration-summary>span,.duration-summary small,.expanded-controls span,footer{color:var(--theme-muted)}
+button,.quiet,.import,.sample,.select-trigger,.select-search,.select-option,.controls button,.download button,.expanded-controls button,.structure-toolbar button,.local-install button,.pause-settings button,.focus-label button{background:var(--theme-paper);border-color:var(--theme-line);color:var(--theme-text)}
+button:hover:not(:disabled),.select-option:hover,.select-option:focus,.select-trigger:hover,.quiet:hover{background:var(--theme-soft);color:var(--theme-text)}
+.primary{background:var(--theme-accent);color:var(--theme-onAccent);border-color:var(--theme-accent)}.primary:hover:not(:disabled){background:var(--theme-accent);color:var(--theme-onAccent);filter:brightness(.9)}
+.drop,.duration-summary,.player,.reading-focus,.local-install>div,.document-tabs,.original-document{background:var(--theme-soft);border-color:var(--theme-line)}
+.doc-foot,.structure-toolbar,.pause-settings,.local-install,.reading-head,.reading-focus,.playback-duration,.expanded-controls,header,footer{border-color:var(--theme-line)}
+.document-tabs button{background:transparent;color:var(--theme-muted)}.document-tabs button[aria-pressed=true],.select-option[aria-selected=true]{background:var(--theme-active);color:var(--theme-text)}
+.reading-part{color:var(--theme-muted)}.reading-part.active{background:var(--theme-active)!important;color:var(--theme-text)!important;border-left-color:var(--theme-accent)}.reading-part.active .sentence-current{background:var(--theme-active);color:var(--theme-text)}
+.reading-word.word-current,.reading-punctuation.word-current{background:var(--theme-accent)!important;color:var(--theme-onAccent)!important;box-shadow:0 0 0 3px var(--theme-accent)}
+input[type=range],input[type=checkbox],progress{accent-color:var(--theme-accent)}textarea::placeholder{color:var(--theme-muted)}
+.pdf-sheet canvas{filter:var(--theme-filter)}
+::highlight(document-sentence){background:var(--theme-active)}::highlight(document-word){background:var(--theme-accent);color:var(--theme-onAccent)}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline-color:var(--theme-accent)}
+.document-expanded .theme-picker{flex-shrink:0}
+@media(max-width:600px){.theme-picker{order:3;width:100%}.theme-picker button{flex:1}.document-expanded .section-head{flex-shrink:0}}
+
+/* PDF glyphs are painted on the canvas; the selectable text above is transparent.
+   Keep both highlight backgrounds translucent so they cannot hide those glyphs. */
+:root{--pdf-sentence-highlight:rgb(225 177 35 / .12);--pdf-word-highlight:rgb(225 177 35 / .30);--pdf-word-underline:#876000}
+:root[data-theme=dark]{--pdf-sentence-highlight:rgb(245 207 105 / .10);--pdf-word-highlight:rgb(245 207 105 / .25);--pdf-word-underline:#f5cf69}
+:root[data-theme=sepia]{--pdf-sentence-highlight:rgb(169 103 15 / .09);--pdf-word-highlight:rgb(169 103 15 / .23);--pdf-word-underline:#88520c}
+.pdf-sheet .textLayer ::highlight(document-sentence){background-color:var(--pdf-sentence-highlight);color:transparent;text-shadow:none}
+.pdf-sheet .textLayer ::highlight(document-word){background-color:var(--pdf-word-highlight);color:transparent;text-shadow:none;text-decoration:underline;text-decoration-color:var(--pdf-word-underline);text-decoration-thickness:2px;text-underline-offset:3px}
+.reading-part.active .sentence-current{box-shadow:none}
+@media(forced-colors:active){.pdf-sheet .textLayer ::highlight(document-sentence){background-color:transparent}.pdf-sheet .textLayer ::highlight(document-word){background-color:transparent;color:transparent;text-decoration-color:Highlight}}
+
+/* All interactive states share the active theme, including higher-specificity legacy rules. */
+:root{--theme-page:#fff;--theme-paper:#fff;--theme-text:#242424;--theme-muted:#606060;--theme-line:#dedede;--theme-controlBorder:#858585;--theme-soft:#f5f5f5;--theme-active:#e8e8e8;--theme-accent:#292929;--theme-onAccent:#fff}
+.structure-toolbar span,.local-install>p,.document-actions label,.select-chevron,.select-empty,#message{color:var(--theme-muted)}
+.settings select,.settings select option{background:var(--theme-paper);color:var(--theme-text)}
+.select-search::placeholder,textarea::placeholder{color:var(--theme-muted);opacity:1}
+button,.quiet,.settings select,.select-trigger,.select-search,.document-actions button{border-color:var(--theme-controlBorder)}
+.select-trigger[aria-expanded=true]{background:var(--theme-soft);border-color:var(--theme-accent);box-shadow:0 0 0 2px var(--theme-active)}
+.select-option:focus-visible{box-shadow:inset 0 0 0 2px var(--theme-accent)}
+.document-actions button{background:var(--theme-paper);color:var(--theme-text)}
+.drop.over{background:var(--theme-active);border-color:var(--theme-accent)}
+.drop .upload-icon{color:var(--theme-text)}
+.reading-part:not(.active){opacity:1;color:var(--theme-text);background:transparent}
+.reading-part:hover:not(:disabled){background:var(--theme-soft);color:var(--theme-text)}
+.reading-part.active .sentence-current{background:var(--theme-active);color:var(--theme-text)}
+.theme-picker button:hover:not(:disabled),.document-tabs button:hover:not(:disabled){background:var(--theme-active);color:var(--theme-text)}
+.structure-toolbar button:hover:not(:disabled),.local-install button:hover:not(:disabled){background:var(--theme-soft);color:var(--theme-text)}
+button:disabled{opacity:1;background:var(--theme-soft);color:var(--theme-muted);border-color:var(--theme-line);box-shadow:none;filter:none}
+.primary:disabled{background:var(--theme-soft);color:var(--theme-muted);border:1px solid var(--theme-controlBorder)}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid var(--theme-accent);outline-offset:3px}
+.reading-part:focus-visible{outline-offset:-3px}
+.pulse{background:var(--theme-accent)}
+.reading-text,.original-document,.select-options,.reading-focus p,textarea{scrollbar-color:var(--theme-controlBorder) var(--theme-soft)}
+.playback-duration progress{background:var(--theme-line);accent-color:var(--theme-accent)}
+.playback-duration progress::-webkit-progress-bar{background:var(--theme-line)}
+.playback-duration progress::-webkit-progress-value{background:var(--theme-accent)}
+.playback-duration progress::-moz-progress-bar{background:var(--theme-accent)}
+::selection{background:var(--theme-accent);color:var(--theme-onAccent)}
+.pdf-sheet .textLayer ::selection{background:var(--pdf-word-highlight);color:transparent}
+audio{color-scheme:light}
+:root[data-theme=dark] audio{color-scheme:dark}
+/* Keep control edges distinct from decorative panel separators. */
+.controls button,.download button,.expanded-controls button,.structure-toolbar button,.local-install button,.pause-settings button,.focus-label button,.sample,.import{border-color:var(--theme-controlBorder)}
+.select-option{border-color:transparent}
+.reading-part{border-color:transparent}
+.reading-part.active{border-left-color:var(--theme-accent)}

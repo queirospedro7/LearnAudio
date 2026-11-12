@@ -1,0 +1,6 @@
+data/
+node_modules/
+tmp/
+test/
+*.log
+*.zip

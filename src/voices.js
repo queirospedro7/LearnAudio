@@ -1,0 +1,1 @@
+export const standardVoices=[{id:'pt-PT-RaquelNeural',name:'Raquel',gender:'Feminina',provider:'edge'},{id:'pt-PT-DuarteNeural',name:'Duarte',gender:'Masculina',provider:'edge'},{id:'pt-PT-FernandaNeural',name:'Fernanda',gender:'Feminina',provider:'edge'}];

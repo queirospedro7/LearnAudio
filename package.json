@@ -1,0 +1,22 @@
+{
+  "name": "audio-leitor",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test",
+    "build": "node scripts/build.mjs"
+  },
+  "dependencies": {
+    "@xmldom/xmldom": "0.8.15",
+    "express": "^5.1.0",
+    "mammoth": "^1.11.0",
+    "msedge-tts": "2.1.1",
+    "multer": "^2.0.2",
+    "pdfjs-dist": "5.4.296"
+  },
+  "engines": {
+    "node": "22.x"
+  }
+}

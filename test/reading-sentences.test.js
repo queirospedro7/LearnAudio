@@ -1,0 +1,3 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {readingSentences} from '../src/text.js';
+test('keeps Portuguese titles and page abbreviations with the following words',()=>{assert.deepEqual(readingSentences('O Dr. Silva chegou. Vamos come\u00e7ar.'),['O Dr. Silva chegou.','Vamos come\u00e7ar.']);assert.deepEqual(readingSentences('Consulte a p\u00e1g. 12. Leia com calma.'),['Consulte a p\u00e1g. 12.','Leia com calma.']);});
+test('does not isolate list numbers or split decimal values',()=>{assert.deepEqual(readingSentences('1. Primeiro item. Depois, outro.'),['1. Primeiro item.','Depois, outro.']);assert.deepEqual(readingSentences('O valor \u00e9 3,14 euros. Est\u00e1 certo?'),['O valor \u00e9 3,14 euros.','Est\u00e1 certo?']);});
